@@ -18,7 +18,9 @@ fi
 
 composer dump-autoload --optimize --no-interaction
 
-php artisan key:generate --force
+if [ -z "${APP_KEY:-}" ]; then
+  php artisan key:generate --force
+fi
 php artisan storage:link || true
 php artisan db:seed --force
 

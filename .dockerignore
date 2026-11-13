@@ -1,0 +1,9 @@
+.git
+.DS_Store
+.env
+node_modules
+vendor
+public/build
+storage/logs
+.superpowers
+docs/superpowers

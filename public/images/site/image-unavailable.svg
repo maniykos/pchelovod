@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-labelledby="title">
+  <title id="title">Изображение пока не добавлено</title>
+  <rect width="900" height="600" fill="#e6dfcf"/>
+  <g fill="none" stroke="#58665e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M365 165h115l60 60v200H365z"/>
+    <path d="M480 165v60h60M399 280h107M399 315h107M399 350h68"/>
+  </g>
+  <text x="450" y="495" text-anchor="middle" fill="#58665e" font-family="sans-serif" font-size="26">Изображение пока не добавлено</text>
+</svg>

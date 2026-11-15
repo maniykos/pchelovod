@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Honey Atelier — мёд с собственной пасеки, собранный в чистых цветущих долинах.">
     <title>@yield('title', 'Honey Atelier — натуральный мёд')</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>

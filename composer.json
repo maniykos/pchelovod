@@ -2,7 +2,7 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "pchelovod/honey-atelier",
     "type": "project",
-    "description": "Русскоязычный и англоязычный сайт пасеки Honey Atelier на Laravel, MongoDB и Vue.",
+    "description": "Русскоязычный и англоязычный сайт пасеки Крымский медосбор на Laravel, MongoDB и Vue.",
     "keywords": ["laravel", "mongodb", "vue", "honey", "apiary"],
     "license": "MIT",
     "require": {

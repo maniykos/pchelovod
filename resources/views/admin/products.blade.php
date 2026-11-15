@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title', 'Товары — Honey Atelier')
+@section('title', 'Товары — Крымский медосбор')
 @section('heading', 'Товары')
 @section('content')
 <div class="admin-page-toolbar"><div><p>Каталог без корзины: посетитель оставляет заявку на выбранный товар.</p></div><a class="button button-dark" href="{{ route('admin.products.create') }}">+ Добавить товар</a></div>

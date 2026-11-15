@@ -1,4 +1,4 @@
 @extends('admin.layout')
-@section('title', 'Галерея — Honey Atelier')
+@section('title', 'Галерея — Крымский медосбор')
 @section('heading', 'Галерея')
 @section('content')<div class="admin-page-toolbar"><div><p>Фотографии пасеки и урожая, которые показываются на Home.</p></div><a class="button button-dark" href="{{ route('admin.gallery.create') }}">+ Добавить фото</a></div><div class="admin-gallery-grid">@forelse($gallery as $item)<article class="admin-gallery-card"><img src="{{ $item->image }}" alt="{{ $item->alt_ru }}"><div><strong>{{ $item->title_ru }}</strong><small>{{ $item->is_published ? 'Опубликовано' : 'Скрыто' }} · порядок {{ $item->sort_order }}</small><div class="admin-row-actions"><a class="text-link" href="{{ route('admin.gallery.edit', $item) }}">Изменить</a><form method="post" action="{{ route('admin.gallery.destroy', $item) }}">@csrf @method('DELETE')<button class="icon-button" type="submit">×</button></form></div></div></article>@empty<div class="admin-empty">Фотографий пока нет.</div>@endforelse</div>@endsection

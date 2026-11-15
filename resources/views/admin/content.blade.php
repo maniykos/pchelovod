@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'Контент — Honey Atelier')
+@section('title', 'Контент — Крымский медосбор')
 @section('heading', 'Контент сайта')
 
 @section('content')

@@ -62,7 +62,7 @@ services:
     image: node:22-alpine
     working_dir: /var/www/html
     environment:
-      VITE_APP_NAME: Honey Atelier
+      VITE_APP_NAME: Крымский медосбор
     volumes:
       - .:/var/www/html
       - node_modules:/var/www/html/node_modules

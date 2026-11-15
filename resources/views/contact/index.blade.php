@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Контакты — Honey Atelier')
+@section('title', 'Контакты — Крымский медосбор')
 
 @section('content')
 <section class="page-hero"><div class="container"><p class="eyebrow">{{ app()->getLocale() === 'ru' ? 'Будем на связи' : 'Let’s stay in touch' }}</p><h1>{{ app()->getLocale() === 'ru' ? 'Заказать мёд или задать вопрос' : 'Order honey or ask a question' }}</h1></div></section>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Honey Atelier — натуральный мёд с пасеки')
+@section('title', 'Крымский медосбор — натуральный мёд с пасеки')
 
 @section('content')
 <section class="hero-section">

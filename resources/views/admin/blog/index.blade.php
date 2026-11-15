@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title', 'Блог — Honey Atelier')
+@section('title', 'Блог — Крымский медосбор')
 @section('heading', 'Блог')
 @section('content')
 <div class="admin-page-toolbar"><div><p>Создавайте статьи на русском и английском, управляйте публикацией и изображением.</p></div><a class="button button-dark" href="{{ route('admin.blog.create') }}">+ Новая статья</a></div>

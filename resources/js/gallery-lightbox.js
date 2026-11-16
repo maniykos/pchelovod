@@ -97,11 +97,23 @@ export function initGalleryLightbox() {
         dialog.showModal();
         closeButton.focus({ preventScroll: true });
     }));
-    closeButton.addEventListener('click', () => dialog.close());
-    dialog.addEventListener('close', () => {
+    function restorePage() {
+        if (dialog.open) return;
         document.documentElement.classList.remove('gallery-lightbox-open');
         opener?.focus({ preventScroll: true });
+    }
+
+    function closeViewer() {
+        dialog.close();
+        restorePage();
+    }
+
+    closeButton.addEventListener('click', closeViewer);
+    dialog.addEventListener('cancel', event => {
+        event.preventDefault();
+        closeViewer();
     });
+    dialog.addEventListener('close', restorePage);
     dialog.addEventListener('keydown', event => {
         if (zoomed) return;
         if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
@@ -115,6 +127,6 @@ export function initGalleryLightbox() {
     zoomButton.addEventListener('click', () => setZoom(!zoomed));
     image.addEventListener('click', () => setZoom(!zoomed));
     stage.addEventListener('click', event => {
-        if (event.target === stage && !zoomed) dialog.close();
+        if (event.target === stage && !zoomed) closeViewer();
     });
 }

@@ -18,7 +18,7 @@ class DashboardController extends Controller
             'stats' => [
                 ['label' => 'Товары', 'value' => Product::count(), 'icon' => 'jar'],
                 ['label' => 'Статьи', 'value' => BlogPost::count(), 'icon' => 'book-open'],
-                ['label' => 'Фото', 'value' => GalleryItem::count(), 'icon' => 'images'],
+                ['label' => 'Фото и видео', 'value' => GalleryItem::count(), 'icon' => 'images'],
                 ['label' => 'Заявки', 'value' => OrderRequest::where('status', 'new')->count(), 'icon' => 'inbox'],
             ],
             'contacts' => ContactSetting::first(),

@@ -12,7 +12,10 @@
             <p class="hero-lead">{{ app()->getLocale() === 'ru' ? 'Собираем его маленькими партиями, чтобы сохранить вкус цветущих склонов, лесных трав и тёплого солнца.' : 'Harvested in small batches to preserve the taste of flowering hills, forest herbs and warm sun.' }}</p>
             <div class="hero-actions"><a class="button button-dark" href="{{ route('products.index') }}">{{ app()->getLocale() === 'ru' ? 'Выбрать мёд' : 'Explore the honey' }} <span>↗</span></a><a class="text-link" href="#story">{{ app()->getLocale() === 'ru' ? 'Наша история' : 'Our story' }} <span>↓</span></a></div>
         </div>
-        <div class="hero-visual"><div class="hero-orb"></div><div class="hero-image hero-image-main"></div><div class="hero-sticker"><span>100%</span><small>{{ app()->getLocale() === 'ru' ? 'натуральный' : 'natural' }}</small></div><div class="hero-bee">✦</div></div>
+        <div class="hero-visual">
+            <img class="hero-image hero-image-main" src="{{ asset('images/hero/honeycomb-cutout.webp') }}" alt="{{ app()->getLocale() === 'ru' ? 'Мёд в сотах на керамической тарелке' : 'Honeycomb on a ceramic plate' }}" width="1536" height="1024" fetchpriority="high">
+            <div class="hero-sticker"><span class="hero-seal-value">100<sup>%</sup></span><small>{{ app()->getLocale() === 'ru' ? 'натуральный мёд' : 'natural honey' }}</small></div>
+        </div>
     </div>
 </section>
 

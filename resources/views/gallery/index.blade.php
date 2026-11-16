@@ -14,7 +14,6 @@
                 @else
                     <a class="gallery-photo" href="{{ $item->image }}" data-gallery-photo data-title="{{ $item->{'title_'.app()->getLocale()} ?: $item->title_ru }}" aria-label="{{ app()->getLocale() === 'ru' ? 'Увеличить фото: ' : 'Enlarge photo: ' }}{{ $item->{'title_'.app()->getLocale()} ?: $item->title_ru }}">
                         <img src="{{ $item->image }}" alt="{{ $item->{'alt_'.app()->getLocale()} ?: $item->alt_ru }}" loading="lazy">
-                        <span class="gallery-photo-zoom" aria-hidden="true">+</span>
                     </a>
                 @endif
                 <figcaption>{{ $item->{'title_'.app()->getLocale()} ?: $item->title_ru }}</figcaption>

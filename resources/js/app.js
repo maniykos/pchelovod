@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import axios from 'axios';
 import HoneyGallery from './components/HoneyGallery.vue';
+import { initGalleryLightbox } from './gallery-lightbox';
 
 window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -17,3 +18,5 @@ if (galleryRoot) {
         items: JSON.parse(galleryRoot.dataset.items || '[]'),
     }).mount(galleryRoot);
 }
+
+initGalleryLightbox();

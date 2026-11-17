@@ -40,7 +40,7 @@ $check = function (bool $condition, string $message) use (&$checks): void {
     $checks++;
 };
 $request = function (string $method, ?string $file = null, array $fields = []): Request {
-    return Request::create('/admin/gallery', $method, $fields + [
+    return Request::create('/admin-dery-one/gallery', $method, $fields + [
         'title_ru' => 'Тест', 'title_en' => 'Test', 'is_published' => '1',
     ], [], $file ? ['image' => new UploadedFile($file, basename($file), null, null, true)] : []);
 };

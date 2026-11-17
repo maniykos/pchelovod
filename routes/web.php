@@ -30,18 +30,20 @@ Route::middleware('web')->group(function () {
     Route::post('/contacts/order', [ContactController::class, 'store'])->name('contacts.order');
     Route::get('/locale/{locale}', LocaleController::class)->name('locale');
 
-    Route::get('/admin/login', [AuthController::class, 'create'])->name('admin.login');
-    Route::post('/admin/login', [AuthController::class, 'store'])->name('admin.login.store');
-    Route::post('/admin/logout', [AuthController::class, 'destroy'])->name('admin.logout');
+    Route::prefix('admin-dery-one')->name('admin.')->group(function () {
+        Route::get('/login', [AuthController::class, 'create'])->name('login');
+        Route::post('/login', [AuthController::class, 'store'])->name('login.store');
+        Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
 
-    Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('products', AdminProductController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
-        Route::resource('blog', AdminBlogController::class)->parameters(['blog' => 'post'])->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
-        Route::resource('certificates', AdminCertificateController::class)->parameters(['certificates' => 'certificate'])->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
-        Route::resource('gallery', AdminGalleryController::class)->parameters(['gallery' => 'galleryItem'])->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
-        Route::get('/contacts', [AdminContactController::class, 'edit'])->name('contacts.edit');
-        Route::put('/contacts', [AdminContactController::class, 'update'])->name('contacts.update');
-        Route::redirect('/content', '/admin/contacts')->name('content');
+        Route::middleware('admin')->group(function () {
+            Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+            Route::resource('products', AdminProductController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+            Route::resource('blog', AdminBlogController::class)->parameters(['blog' => 'post'])->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+            Route::resource('certificates', AdminCertificateController::class)->parameters(['certificates' => 'certificate'])->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+            Route::resource('gallery', AdminGalleryController::class)->parameters(['gallery' => 'galleryItem'])->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+            Route::get('/contacts', [AdminContactController::class, 'edit'])->name('contacts.edit');
+            Route::put('/contacts', [AdminContactController::class, 'update'])->name('contacts.update');
+            Route::redirect('/content', '/admin-dery-one/contacts')->name('content');
+        });
     });
 });
